@@ -33,62 +33,89 @@ pointer-events: auto;
 </style>
 </head>
 <body class="min-h-screen bg-[#f6f2e9] text-[#4b3f33] font-sans">
-    <!-- Navbar -->
-   <nav class="fixed top-0 left-0 w-full z-50 px-10 py-4 flex justify-start items-center bg-transparent backdrop-blur-sm">
-    <h1 class="text-white text-3xl font-bold mr-[5cm]">Chill Coffee</h1>
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-sm px-6 py-4 flex items-center justify-start">
+  <!-- Brand -->
+  <h1 class="text-white text-3xl font-bold mr-[7cm]">SWEET HOUSE</h1>
 
-    <ul class="flex gap-[9cm] text-white font-semibold text-lg">
+  <!-- Hamburger Button (Mobile) -->
+  <button id="burgerBtn" class="text-white md:hidden ml-auto" onclick="toggleMenu()">
+    &#9776;
+  </button>
 
-        <!-- HOME -->
-        <li class="group relative cursor-pointer">
-            Home
-            <div class="dropdown-menu absolute left-0 mt-2 w-[600px] bg-black/50 backdrop-blur-md rounded-xl p-6 text-white shadow-lg grid grid-cols-2 gap-6">
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Welcome Page</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Gallery</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Offers</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Store Location</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">New Updates</p>
-            </div>
-        </li>
+  <!-- Menu -->
+  <ul id="navMenu" class="hidden md:flex text-white font-semibold text-lg space-x-12">
+    <li class="group relative cursor-pointer">
+      Home
+      <div class="dropdown-menu absolute left-0 mt-2 w-[600px] bg-black/50 backdrop-blur-md rounded-xl p-6 text-white shadow-lg grid grid-cols-2 gap-6">
+        <p class="py-1 hover:text-gray-300 cursor-pointer">Welcome Page</p>
+        <p class="py-1 hover:text-gray-300 cursor-pointer">Gallery</p>
+        <p class="py-1 hover:text-gray-300 cursor-pointer">Offers</p>
+        <p class="py-1 hover:text-gray-300 cursor-pointer">Store Location</p>
+        <p class="py-1 hover:text-gray-300 cursor-pointer">New Updates</p>
+      </div>
+    </li>
 
-        <!-- MENU -->
-        <li class="group relative cursor-pointer">
-            Menu
-            <div class="dropdown-menu absolute left-0 mt-2 w-[600px] bg-black/50 backdrop-blur-md rounded-xl p-6 text-white shadow-lg grid grid-cols-2 gap-6">
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Coffee List</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Non-Coffee</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Snacks</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Seasonal Drinks</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Best Sellers</p>
-            </div>
-        </li>
+    <li class="group relative cursor-pointer">
+      <a href="about.html">About</a>
+      <div class="dropdown-menu absolute left-0 mt-2 w-[600px] bg-black/50 backdrop-blur-md rounded-xl p-6 text-white shadow-lg grid grid-cols-2 gap-6">
+        <p class="py-1 hover:text-gray-300 cursor-pointer">Our Story</p>
+        <p class="py-1 hover:text-gray-300 cursor-pointer">Founder</p>
+        <p class="py-1 hover:text-gray-300 cursor-pointer">Values</p>
+        <p class="py-1 hover:text-gray-300 cursor-pointer">Team</p>
+        <p class="py-1 hover:text-gray-300 cursor-pointer">History</p>
+      </div>
+    </li>
 
-        <!-- ABOUT -->
-        <li class="group relative cursor-pointer">
-            About
-            <div class="dropdown-menu absolute left-0 mt-2 w-[600px] bg-black/50 backdrop-blur-md rounded-xl p-6 text-white shadow-lg grid grid-cols-2 gap-6">
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Our Story</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Founder</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Values</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Team</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">History</p>
-            </div>
-        </li>
-
-        <!-- CONTACT -->
-        <li class="group relative cursor-pointer">
-            Contact
-            <div class="dropdown-menu absolute left-0 mt-2 w-[400px] bg-black/50 backdrop-blur-md rounded-xl p-6 text-white shadow-lg grid grid-cols-2 gap-6">
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Email Us</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">WhatsApp</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Instagram</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">Support</p>
-                <p class="py-1 hover:text-gray-300 cursor-pointer">FAQ</p>
-            </div>
-        </li>
-
-    </ul>
+    <li class="group relative cursor-pointer">
+      <a href="contact.html">Contact</a>
+      <div class="dropdown-menu absolute left-0 mt-2 w-[400px] bg-black/50 backdrop-blur-md rounded-xl p-6 text-white shadow-lg grid grid-cols-2 gap-6">
+        <p class="py-1 hover:text-gray-300 cursor-pointer">Email Us</p>
+        <p class="py-1 hover:text-gray-300 cursor-pointer">WhatsApp</p>
+        <p class="py-1 hover:text-gray-300 cursor-pointer">Instagram</p>
+        <p class="py-1 hover:text-gray-300 cursor-pointer">Support</p>
+        <p class="py-1 hover:text-gray-300 cursor-pointer">FAQ</p>
+      </div>
+    </li>
+  </ul>
 </nav>
+
+<script>
+  // Toggle menu (mobile)
+  function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    menu.classList.toggle('hidden');
+    me
+
+
+<script>
+  // Toggle menu (mobile)
+  function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
+    menu.classList.toggle('flex-col');
+    menu.classList.toggle('gap-4');
+  }
+</script>
+
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden fixed top-0 left-0 w-full h-screen bg-black/80 z-40 flex flex-col items-center justify-center gap-8 text-white text-2xl">
+  <a href="#" class="hover:text-gray-300">Home</a>
+  <a href="#" class="hover:text-gray-300">Menu</a>
+  <a href="#" class="hover:text-gray-300">About</a>
+  <a href="#" class="hover:text-gray-300">Contact</a>
+</div>
+
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  burgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 
 
     <script>
@@ -104,47 +131,59 @@ pointer-events: auto;
         });
     </script>
 
-    <!-- Hero Section -->
-    <section class="relative w-full h-[85vh] overflow-hidden" id="heroSlider">
-        <!-- Slides with Captions -->
-        <div class="slide absolute inset-0 opacity-100 transition-opacity duration-700">
-            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" class="w-full h-full object-cover slide-img" />
-            <div class="caption absolute bottom-20 left-1/2 -translate-x-1/2 text-white text-center max-w-xl">
-                <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl">Premium Coffee Beans</h2>
-                <p class="text-lg md:text-xl mt-2 drop-shadow">Freshly roasted aroma for your perfect day.</p>
-            </div>
+   <!-- Hero Section -->
+<section class="relative w-full h-[85vh] overflow-hidden" id="heroSlider">
+    <!-- Slide 1 -->
+    <div class="slide absolute inset-0 opacity-100 transition-opacity duration-700">
+        <img src="sweethouse1.png" class="w-full h-full object-cover slide-img" />
+        <div class="caption absolute bottom-20 left-1/2 -translate-x-1/2 text-white text-center max-w-xl">
+            <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl">Sweet House – A Sip of Serenity</h2>
+            <p class="text-lg md:text-xl mt-2 drop-shadow">Indulge in perfectly brewed coffee and a cozy, inviting ambiance.</p>
         </div>
+    </div>
 
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
-            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" class="w-full h-full object-cover slide-img" />
-            <div class="caption absolute bottom-20 left-1/2 -translate-x-1/2 text-white text-center max-w-xl">
-                <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl">Artistic Latte Craft</h2>
-                <p class="text-lg md:text-xl mt-2 drop-shadow">Latte art made by passionate baristas.</p>
-            </div>
+    <!-- Slide 2 -->
+    <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="sweethouse2.png" class="w-full h-full object-cover slide-img" />
+        <div class="caption absolute bottom-20 left-1/2 -translate-x-1/2 text-white text-center max-w-xl">
+            <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl">Sweet House – Your Daily Escape</h2>
+            <p class="text-lg md:text-xl mt-2 drop-shadow">Where every cup of coffee is crafted with love and style.</p>
         </div>
+    </div>
 
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" class="w-full h-full object-cover slide-img" />
-            <div class="caption absolute bottom-20 left-1/2 -translate-x-1/2 text-white text-center max-w-xl">
-                <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl">Mocha Delight</h2>
-                <p class="text-lg md:text-xl mt-2 drop-shadow">Rich blend of chocolate and espresso.</p>
-            </div>
+    <!-- Slide 3 -->
+    <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="sweethouse3.png" class="w-full h-full object-cover slide-img" />
+        <div class="caption absolute bottom-20 left-1/2 -translate-x-1/2 text-white text-center max-w-xl">
+            <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl">Sweet House – Taste the Art of Coffee</h2>
+            <p class="text-lg md:text-xl mt-2 drop-shadow">Experience rich flavors and aesthetic moments in every sip.</p>
         </div>
+    </div>
 
-        <!-- Prev/Next Buttons Modern Icons -->
-        <button id="prevBtn" class="absolute left-6 top-1/2 -translate-y-1/2 bg-black bg-opacity-40 text-white p-4 rounded-full z-30 hover:bg-opacity-60 backdrop-blur-md">❮</button>
-        <button id="nextBtn" class="absolute right-6 top-1/2 -translate-y-1/2 bg-black bg-opacity-40 text-white p-4 rounded-full z-30 hover:bg-opacity-60 backdrop-blur-md">❯</button>
-
-        <!-- Dots Navigation -->
-        <div class="absolute bottom-6 w-full flex justify-center space-x-3 z-30">
-            <span class="dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
-            <span class="dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
-            <span class="dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
+    <!-- Slide 4 (baru) -->
+    <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="sweethouse4.png" class="w-full h-full object-cover slide-img" />
+        <div class="caption absolute bottom-20 left-1/2 -translate-x-1/2 text-white text-center max-w-xl">
+            <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl">Sweet House – Cozy, Crafted, Delicious</h2>
+            <p class="text-lg md:text-xl mt-2 drop-shadow">A haven for coffee lovers to relax, savor, and enjoy.</p>
         </div>
+    </div>
 
-        <!-- Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70 z-10"></div>
-    </section>
+    <!-- Prev/Next Buttons -->
+    <button id="prevBtn" class="absolute left-6 top-1/2 -translate-y-1/2 bg-black bg-opacity-40 text-white p-4 rounded-full z-30 hover:bg-opacity-60 backdrop-blur-md">❮</button>
+    <button id="nextBtn" class="absolute right-6 top-1/2 -translate-y-1/2 bg-black bg-opacity-40 text-white p-4 rounded-full z-30 hover:bg-opacity-60 backdrop-blur-md">❯</button>
+
+    <!-- Dots Navigation -->
+    <div class="absolute bottom-6 w-full flex justify-center space-x-3 z-30">
+        <span class="dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
+        <span class="dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
+        <span class="dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
+        <span class="dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
+    </div>
+
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70 z-10"></div>
+</section>
 
     <style>
         /* Zoom in effect */
@@ -232,16 +271,16 @@ pointer-events: auto;
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
             <!-- Card 1 -->
             <div class="bg-white shadow-lg rounded-xl overflow-hidden card-animate transition-transform duration-300">
-                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" class="w-full h-56 object-cover" />
+                <img src="espresso.jpg" class="w-full h-50 object-cover" />
                 <div class="p-6">
-                    <h4 class="text-2xl font-semibold mb-2">Cappuccino</h4>
-                    <p class="text-[#6b4e32]">Smooth, creamy, and perfectly balanced.</p>
+                    <h4 class="text-2xl font-semibold mb-2">Espresso</h4>
+                    <p class="text-[#6b4e32]">Espresso: Small cup, big taste. Bold, intense, unforgettable.</p>
                 </div>
             </div>
 
             <!-- Card 2 -->
             <div class="bg-white shadow-lg rounded-xl overflow-hidden card-animate transition-transform duration-300">
-                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" class="w-full h-56 object-cover" />
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" class="w-full h-50 object-cover" />
                 <div class="p-6">
                     <h4 class="text-2xl font-semibold mb-2">Latte Art</h4>
                     <p class="text-[#6b4e32]">A beautiful blend of espresso and milk.</p>
@@ -250,7 +289,7 @@ pointer-events: auto;
 
             <!-- Card 3 -->
             <div class="bg-white shadow-lg rounded-xl overflow-hidden card-animate transition-transform duration-300">
-                <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9" class="w-full h-56 object-cover" />
+                <img src="mocha.jpg" class="w-full h-50 object-cover" />
                 <div class="p-6">
                     <h4 class="text-2xl font-semibold mb-2">Mocha Bliss</h4>
                     <p class="text-[#6b4e32]">Rich chocolate combined with deep espresso.</p>
