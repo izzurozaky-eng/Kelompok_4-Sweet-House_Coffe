@@ -3,61 +3,37 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SWEET HOUSE - Home</title>
+<title>Chill Coffee - About</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="dist/output.css" />
 
 <style>
-/* Page Load Animation */
-@keyframes pageFadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-body {
-  animation: pageFadeIn 1s ease-in-out;
-}
-
-/* Dropdown Animation */
-.dropdown-menu {
-  transform: translateY(10px);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-.group:hover .dropdown-menu {
-  transform: translateY(0px);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Hero Slide Effects */
-.slide-img { 
-  transform: scale(1.1); 
-  transition: transform 5s ease-in-out; 
-}
-.slide.active .slide-img { 
-  transform: scale(1); 
-}
-
-.caption { 
-  opacity: 0; 
-  transform: translateY(20px); 
-  transition: all 0.8s ease; 
-  z-index: 50; 
-}
-.slide.active .caption { 
-  opacity: 1; 
-  transform: translateY(0); 
-}
-
-/* Card Hover */
-.card-animate:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  transition: 0.3s ease;
-}
+    @keyframes pageFadeIn { from { opacity:0; } to { opacity:1;} }
+    body { animation: pageFadeIn 1s ease-in-out; }
 </style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWEET HOUSE - About</title>
 
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Output CSS (jika dipakai di index) -->
+  <link rel="stylesheet" href="dist/output.css" />
+
+  <style>
+    /* Page Load Animation */
+    @keyframes pageFadeIn { 
+      from { opacity: 0; } 
+      to { opacity: 1; } 
+    }
+    body { 
+      animation: pageFadeIn 1s ease-in-out; 
+    }
+  </style>
 </head>
+
 <body class="min-h-screen bg-[#f6f2e9] text-[#4b3f33] font-sans">
 
 <!-- Navbar -->
@@ -67,123 +43,117 @@ body {
   <button id="burgerBtn" class="text-white md:hidden ml-auto">&#9776;</button>
 
   <ul id="navMenu" class="hidden md:flex text-white font-semibold text-lg space-x-12">
-  <li class="cursor-pointer">Home</li>
-  <li><a href="about.html" class="cursor-pointer">About</a></li>
-  <li><a href="contact.html" class="cursor-pointer">Contact</a></li>
-</ul>
-
-
+    <li><a href="index.html" class="cursor-pointer hover:text-gray-300">Home</a></li>
+    <li><a href="about.html" class="cursor-pointer text-[#ffd7a0]">About</a></li>
+    <li><a href="contact.html" class="cursor-pointer hover:text-gray-300">Contact</a></li>
+  </ul>
 </nav>
 
-<!-- Mobile Menu -->
-<div id="mobileMenu" class="hidden fixed top-0 left-0 w-full h-screen bg-black/80 z-40 flex flex-col items-center justify-center gap-8 text-white text-2xl">
-  <a href="#" class="hover:text-gray-300">Home</a>
-  <a href="#" class="hover:text-gray-300">Menu</a>
-  <a href="about.html" class="hover:text-gray-300">About</a>
-  <a href="contact.html" class="hover:text-gray-300">Contact</a>
-</div>
-
 <script>
-// Toggle menu (desktop)
-document.getElementById('burgerBtn').onclick = function () {
-  document.getElementById('mobileMenu').classList.toggle('hidden');
-};
-
-// Navbar scroll animation
-window.addEventListener('scroll', function () {
-  const nav = document.getElementById('navbar');
-  if (window.scrollY > 50) {
-    nav.classList.add('py-2', 'shadow-lg');
-    nav.classList.remove('py-4');
-  } else {
-    nav.classList.add('py-4');
-    nav.classList.remove('py-2', 'shadow-lg');
-  }
-});
+  window.addEventListener("scroll", () => {
+    const nav = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+      nav.classList.add("py-2", "shadow-lg", "bg-black/30");
+      nav.classList.remove("py-4");
+    } else {
+      nav.classList.add("py-4");
+      nav.classList.remove("py-2", "shadow-lg", "bg-black/30");
+    }
+  });
 </script>
 
-<!-- Hero Slider -->
-<section class="relative w-full h-[85vh] overflow-hidden" id="heroSlider">
+<!-- Navbar Scroll Effect -->
+<script>
+  window.addEventListener("scroll", () => {
+    const nav = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+      nav.classList.add("py-2", "shadow-lg", "bg-black/30");
+      nav.classList.remove("py-4");
+    } else {
+      nav.classList.add("py-4");
+      nav.classList.remove("py-2", "shadow-lg", "bg-black/30");
+    }
+  });
+</script>
 
-  <!-- Slide 1 -->
-  <div class="slide absolute inset-0 opacity-100 transition-opacity duration-700">
-    <img src="sweethouse1.png" class="w-full h-full object-cover slide-img" />
-    <div class="caption absolute bottom-20 left-1/2 -translate-x-1/2 text-white text-center max-w-xl">
-      <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl">Sweet House – Seteguk Ketenangan</h2>
-      <p class="text-lg md:text-xl mt-2 drop-shadow">Nikmati kopi terbaik dalam suasana yang hangat dan nyaman.</p>
+<script>
+    window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+            nav.classList.add("py-2", "shadow-lg", "bg-black/30");
+            nav.classList.remove("py-4");
+        } else {
+            nav.classList.add("py-4");
+            nav.classList.remove("py-2", "shadow-lg", "bg-black/30");
+        }
+    });
+</script>
+
+<!-- HERO HEADER -->
+<section class="w-full h-screen relative overflow-hidden">
+    <img src="sweethouse5.png" 
+         class="w-full h-full object-cover brightness-75">
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
+        <h1 class="text-5xl font-bold drop-shadow-xl">Our Story</h1>
+        <p class="text-lg mt-3 max-w-2xl">From humble roastery to a cozy community space.</p>
     </div>
-  </div>
-
-  <!-- Slide 2 -->
-  <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
-    <img src="sweethouse2.png" class="w-full h-full object-cover slide-img" />
-    <div class="caption absolute bottom-20 left-1/2 -translate-x-1/2 text-white text-center max-w-xl">
-      <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl">Sweet House – Pelarian Hangat Setiap Hari</h2>
-      <p class="text-lg md:text-xl mt-2 drop-shadow">Diracik dengan penuh rasa dan kenyamanan.</p>
-    </div>
-  </div>
-
-  <!-- Slide 3 -->
-  <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
-    <img src="sweethouse3.png" class="w-full h-full object-cover slide-img" />
-    <div class="caption absolute bottom-20 left-1/2 -translate-x-1/2 text-white text-center max-w-xl">
-      <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl">Sweet House – Rasakan Seni dalam Secangkir Kopi</h2>
-      <p class="text-lg md:text-xl mt-2 drop-shadow">Nikmati momen estetik di setiap tegukan.</p>
-    </div>
-  </div>
-
-  <!-- Slide 4 -->
-  <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
-    <img src="sweethouse4.png" class="w-full h-full object-cover slide-img" />
-    <div class="caption absolute bottom-20 left-1/2 -translate-x-1/2 text-white text-center max-w-xl">
-      <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl">Sweet House – Hangat, Nyaman, dan Lezat</h2>
-      <p class="text-lg md:text-xl mt-2 drop-shadow">Santai, nikmati, dan rasakan kelezatannya.</p>
-    </div>
-  </div>
-
-  <!-- Prev/Next -->
-  <button id="prevBtn" class="absolute left-6 top-1/2 -translate-y-1/2 bg-black/40 text-white p-4 rounded-full z-30 hover:bg-black/60">❮</button>
-  <button id="nextBtn" class="absolute right-6 top-1/2 -translate-y-1/2 bg-black/40 text-white p-4 rounded-full z-30 hover:bg-black/60">❯</button>
-
-  <!-- Dots -->
-  <div class="absolute bottom-6 w-full flex justify-center space-x-3 z-30">
-    <span class="dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
-    <span class="dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
-    <span class="dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
-    <span class="dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
-  </div>
-
-  <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70 z-10"></div>
 </section>
 
 
-<script>
-// Slider Logic
-let slides = document.querySelectorAll('#heroSlider .slide');
-let dots = document.querySelectorAll('#heroSlider .dot');
-let index = 0;
+<!-- ABOUT CONTENT -->
+<main class="max-w-6xl mx-auto px-6 py-16">
 
-function showSlide(i) {
-  slides.forEach((slide, idx) => {
-    slide.style.opacity = idx === i ? '1' : '0';
-    slide.classList.toggle('active', idx === i);
-  });
-  dots.forEach((dot, idx) => {
-    dot.style.opacity = idx === i ? '1' : '0.4';
-  });
-  index = i;
-}
+<section class="grid md:grid-cols-2 gap-12 items-center">
+    <img src="https://images.unsplash.com/photo-1523364724857-1adf7f1e1f2d?q=80"
+         class="rounded-2xl shadow-xl">
 
-function nextSlide() { showSlide((index + 1) % slides.length); }
-function prevSlide() { showSlide((index - 1 + slides.length) % slides.length); }
+    <div>
+        <h2 class="text-3xl font-bold text-[#3a2e25]">How We Started</h2>
+        <p class="mt-4 text-[#6b4e32] leading-relaxed">
+            Founded in 2017, Chill Coffee lahir dari mimpi sederhana: membuat ruang 
+            dimana setiap orang bisa menikmati kopi terbaik sambil merasa seperti di rumah sendiri.
+        </p>
 
-document.getElementById('nextBtn').onclick = nextSlide;
-document.getElementById('prevBtn').onclick = prevSlide;
-dots.forEach((dot, i) => dot.onclick = () => showSlide(i));
+        <p class="mt-3 text-[#6b4e32] leading-relaxed">
+            Kami bermitra dengan petani kopi lokal, melakukan roasting batch kecil,
+            dan mengedepankan kualitas rasa pada setiap cangkir.
+        </p>
 
-setInterval(nextSlide, 6000);
-showSlide(0);
-</script>
+        <ul class="mt-5 space-y-2 text-sm text-[#6b4e32]">
+            <li>• Direct trade partners</li>
+            <li>• Small batch roasting</li>
+            <li>• Community workshops & events</li>
+        </ul>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section class="mt-20">
+    <h2 class="text-3xl font-bold text-center text-[#3a2e25]">Meet the Team</h2>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80"
+                 class="w-24 h-24 rounded-full object-cover mx-auto">
+            <h4 class="text-xl font-semibold mt-4 text-center">Alya – Head Barista</h4>
+            <p class="text-center text-[#6b4e32] text-sm mt-1">Latte art specialist.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition">
+            <img src="https://images.unsplash.com/photo-1541233349642-6e425fe6190e?q=80"
+                 class="w-24 h-24 rounded-full object-cover mx-auto">
+            <h4 class="text-xl font-semibold mt-4 text-center">Budi – Roaster</h4>
+            <p class="text-center text-[#6b4e32] text-sm mt-1">Origin flavor expert.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+                 class="w-24 h-24 rounded-full object-cover mx-auto">
+            <h4 class="text-xl font-semibold mt-4 text-center">Citra – Floor Manager</h4>
+            <p class="text-center text-[#6b4e32] text-sm mt-1">Ensures the best experience.</p>
+        </div>
+    </div>
+</section>
 
 <!-- Favorites Section -->
 <section class="py-16 container mx-auto px-6">
@@ -218,9 +188,237 @@ showSlide(0);
   </div>
 </section>
 
-<footer class="bg-[#e8dfd0] text-center py-6 mt-10">
-  <p class="text-lg">© 2025 Sweet House Café. All Rights Reserved.</p>
+<section class="mt-20">
+  <h2 class="text-3xl font-bold text-center text-[#3a2e25] mb-10">Espresso Based</h2>
+
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+    <!-- 1. Espresso -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Espresso</h4>
+        <p class="text-[#6b4e32] text-sm">Shot kopi pekat dengan aroma bold.</p>
+        <p class="font-bold text-right mt-2">Rp 22.000</p>
+      </div>
+    </div>
+
+    <!-- 2. Double Espresso -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1561882468-9110e03e0f78?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Double Espresso</h4>
+        <p class="text-[#6b4e32] text-sm">Dua shot espresso dengan kekuatan penuh.</p>
+        <p class="font-bold text-right mt-2">Rp 28.000</p>
+      </div>
+    </div>
+
+    <!-- 3. Americano -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Americano</h4>
+        <p class="text-[#6b4e32] text-sm">Espresso + air panas, rasa clean dan ringan.</p>
+        <p class="font-bold text-right mt-2">Rp 25.000</p>
+      </div>
+    </div>
+
+    <!-- 4. Cappuccino -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Cappuccino</h4>
+        <p class="text-[#6b4e32] text-sm">Perpaduan espresso, susu, dan foam.</p>
+        <p class="font-bold text-right mt-2">Rp 32.000</p>
+      </div>
+    </div>
+
+    <!-- 5. Latte -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Caffè Latte</h4>
+        <p class="text-[#6b4e32] text-sm">Espresso lembut dengan susu steamed.</p>
+        <p class="font-bold text-right mt-2">Rp 30.000</p>
+      </div>
+    </div>
+
+    <!-- 6. Flat White -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1432107294469-414527cb5c65?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Flat White</h4>
+        <p class="text-[#6b4e32] text-sm">Lebih creamy dengan foam tipis.</p>
+        <p class="font-bold text-right mt-2">Rp 33.000</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="mt-20">
+  <h2 class="text-3xl font-bold text-center text-[#3a2e25] mb-10">Flavored Coffee</h2>
+
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+    <!-- 7. Caramel Latte -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Caramel Latte</h4>
+        <p class="text-[#6b4e32] text-sm">Latte creamy dengan saus caramel premium.</p>
+        <p class="font-bold text-right mt-2">Rp 36.000</p>
+      </div>
+    </div>
+
+    <!-- 8. Vanilla Latte -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Vanilla Latte</h4>
+        <p class="text-[#6b4e32] text-sm">Manis lembut dengan aroma vanilla.</p>
+        <p class="font-bold text-right mt-2">Rp 35.000</p>
+      </div>
+    </div>
+
+    <!-- 9. Hazelnut Latte -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1507914372368-bd133d1e31e5?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Hazelnut Latte</h4>
+        <p class="text-[#6b4e32] text-sm">Kombinasi kacang hazelnut dan kopi creamy.</p>
+        <p class="font-bold text-right mt-2">Rp 38.000</p>
+      </div>
+    </div>
+
+    <!-- 10. Mocha -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Mocha</h4>
+        <p class="text-[#6b4e32] text-sm">Perpaduan coklat premium dan espresso.</p>
+        <p class="font-bold text-right mt-2">Rp 38.000</p>
+      </div>
+    </div>
+
+    <!-- 11. Spanish Latte -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1555646011-rt8a?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Spanish Latte</h4>
+        <p class="text-[#6b4e32] text-sm">Latte manis susu kental ala Spanyol.</p>
+        <p class="font-bold text-right mt-2">Rp 40.000</p>
+      </div>
+    </div>
+
+    <!-- 12. Ice Shaken Espresso -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Ice Shaken Espresso</h4>
+        <p class="text-[#6b4e32] text-sm">Espresso dikocok dengan es, hasilkan rasa tajam.</p>
+        <p class="font-bold text-right mt-2">Rp 34.000</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="mt-20">
+  <h2 class="text-3xl font-bold text-center text-[#3a2e25] mb-10">World Coffee Selection</h2>
+
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+    <!-- 13. Turkish Coffee -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1557821552-17105176677c?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Turkish Coffee</h4>
+        <p class="text-[#6b4e32] text-sm">Rasa kuat, pekat, dan disajikan dengan endapan.</p>
+        <p class="font-bold text-right mt-2">Rp 42.000</p>
+      </div>
+    </div>
+
+    <!-- 14. Vietnamese Drip -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1604909052856-c8e93a5f2cd9?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Vietnamese Drip</h4>
+        <p class="text-[#6b4e32] text-sm">Kopi pekat dengan susu kental manis.</p>
+        <p class="font-bold text-right mt-2">Rp 33.000</p>
+      </div>
+    </div>
+
+    <!-- 15. Kyoto Cold Brew -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Kyoto Cold Brew</h4>
+        <p class="text-[#6b4e32] text-sm">Diseduh tetes demi tetes ala Jepang.</p>
+        <p class="font-bold text-right mt-2">Rp 45.000</p>
+      </div>
+    </div>
+
+    <!-- 16. Italian Affogato -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1587734337599-d57c7d9f54d5?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Affogato</h4>
+        <p class="text-[#6b4e32] text-sm">Scoop vanilla gelato disiram espresso.</p>
+        <p class="font-bold text-right mt-2">Rp 40.000</p>
+      </div>
+    </div>
+
+    <!-- 17. Ethiopian Pour Over -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Ethiopian Pour Over</h4>
+        <p class="text-[#6b4e32] text-sm">Floral & fruity khas Afrika Timur.</p>
+        <p class="font-bold text-right mt-2">Rp 48.000</p>
+      </div>
+    </div>
+
+    <!-- 18. Arabica Yemen -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Yemeni Arabica</h4>
+        <p class="text-[#6b4e32] text-sm">Spicy, earthy, dan eksotis.</p>
+        <p class="font-bold text-right mt-2">Rp 50.000</p>
+      </div>
+    </div>
+
+    <!-- 19. Colombian Brew -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Colombian Brew</h4>
+        <p class="text-[#6b4e32] text-sm">Rasa nutty & bright acidity.</p>
+        <p class="font-bold text-right mt-2">Rp 46.000</p>
+      </div>
+    </div>
+
+    <!-- 20. Brazilian Santos -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold text-lg">Brazilian Santos</h4>
+        <p class="text-[#6b4e32] text-sm">Smooth, coklat, dan low acidity.</p>
+        <p class="font-bold text-right mt-2">Rp 44.000</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="bg-[#e8dfd0] text-center py-6 mt-20">
+    <p class="text-lg">© 2025 Chill Coffee. All Rights Reserved.</p>
 </footer>
 
 </body>
 </html>
+
